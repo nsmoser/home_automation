@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+	<body>
+		<h1> Light Control Center 1.0!</h1>
+		<br><br><br>
+		{% if room1 == 0 %}
+			<h2>Room 1 is off</h2>
+		{% else %}
+			<h2>Room 1 is on</h2>
+		{% endif %}
+		<br><br>
+		<form action="/handler" method="POST">
+			<button name="action" value="tog1" type="submit">Toggle Room 1 Lights</button>
+		</form>
+		<br><br><br>
+		{% if room2 == 0 %}
+			<h2>Room 2 is off</h2>
+		{% else %}
+			<h2>Room 2 is on</h2>
+		{% endif %}
+		</ul><br><br>
+		<form action="/handler" method = "POST">
+			<button name="action" value="tog2" type="submit">Toggle Room 2 Lights</button>
+		</form>
+	</body>
+</html>
